@@ -50,12 +50,12 @@ def min_max_it(a) :
 
 # Main
 
-a = load_a()
+a = load_a(open(sys.argv[1],'r'))
 
 mini, maxi = None, None
-if sys.argv[1] == 'dc' :
+if sys.argv[2] == 'dc' :
     mini, maxi = min_max_dc(a) # run d&c version
 else :
     mini, maxi = min_max_it(a) # run iterative version
 
-print(mini, maxi)
+print('{:.10f} {:.10f}'.format(mini, maxi))
